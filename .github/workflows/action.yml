@@ -27,9 +27,9 @@ jobs:
         uses: docker/build-push-action@v1.1.0
         with:
           context: .
-          dockerfile: $DOCKERFILE
+          dockerfile: ${{ DOCKERFILE }}
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          repository: ${{ secrets.DOCKER_USERNAME }}/$APP_NAME
+          repository: ${{ secrets.DOCKER_USERNAME }}/${{ APP_NAME }}
           push: true
           tags: ${{ github.sha }}, latest
